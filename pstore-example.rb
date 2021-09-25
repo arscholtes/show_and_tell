@@ -1,4 +1,18 @@
 require "pstore"
+store - PStore.new("api_directory.pstore")
+
+# create `spider`, then ...
+
+spider.resultes.lazy.take(50).each_with_index do |result, i|
+  store.transaction do
+    store[result[:name]] = result
+    store.commit
+  end
+end
+
+
+
+#************************************************************#
 
 # a mock wiki object...
 class WikiPage
