@@ -15,3 +15,8 @@ the application.
 
 -If even more time, then see if we can't add a component to the email message
 that would enable us to track how long it takes from send until its opened and for how long it is opened and if any hard coded links are touched.
+
+-And just to clarify one of the comments, it was an attempt at humor, I used devise so that I can add the messaging functionality to the project and
+I am on a time crunch so yeah, I know CV used to say to not use that gem.
+
+-I found this really cool new thing called hotwire by the way, I will link it but its amazing from what I have seen, its prerelease but sounds like they are launching v1.0 soon.  Trying to do a talk at indy.rb in the future about it once I learn more.
