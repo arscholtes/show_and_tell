@@ -7,7 +7,7 @@
 # visit and how data from those pages should be consumed.
 #
 # Usage:
-#   spider = ProgrammableWeb.new
+#   spider = Techpoint.new
 #   spider.results.take(10)
 #   => [{...}, {...}, ...]
 #
