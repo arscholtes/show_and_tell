@@ -1,5 +1,6 @@
+# Language: Ruby, Level: Level 3
 require "pstore"
-store - PStore.new("api_directory.pstore")
+#store - PStore.new("api_directory.pstore")
 
 # create `spider`, then ...
 
