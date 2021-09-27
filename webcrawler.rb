@@ -150,6 +150,28 @@ end
 #    results[key] = val
 #  end
 
+
+# Hit google and search for DemandWell -\/
+# Go into the top 100 websites and search for
+# key-words(demandwell, demand well, SEO,distance from home base).count
+# on each should give a picture of content or I think it might.
+# List out URLs that contain SEO.
+# How to figure out what type of company the
+# website belongs to, potential customer or
+# Competitor.  Only keep potential customers.
+#
+
+# Or search for SEO and see how many links contain
+# DemandWell.  Set to run automatically at ____ interval.
+#
+#
+#
+#
+#
+#
+#
+
+
   def process_twitter(page, data = {})
     categories = page.search("article.node-api .tags").first.text.strip.split(/\s+/)
     fields = page.search("#tabs-content .field").each_with_object({}) do |tag, results|
