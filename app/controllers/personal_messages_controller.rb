@@ -1,6 +1,6 @@
 # Language: Ruby, Level: Level 4
 class PersonalMessagesController < ApplicationController
-  before_action :find_conversation! # Need logic for when you send the message, right now we only have logic for when we load the message.
+  before_action :find_conversation!
 
   def create
     @personal_message = current_user.personal_messages.build(personal_message_params)
@@ -14,6 +14,16 @@ class PersonalMessagesController < ApplicationController
   def new
     @personal_message = current_user.personal_messages.build
   end
+
+  def create
+    @conversation ||= Conversation.create(author_id: current_user.id,
+                                          receiver_id: @receiver.id)
+    @personal_message = current_user.personal_messages.build(personal_message_parms)
+    @personal_message.conversation_id = @conversation_id
+    @personal_message.save!
+
+    flash[:success] = "Your message was sent!"
+    redirect_to conversation_path(@conversation)
 
   private
 

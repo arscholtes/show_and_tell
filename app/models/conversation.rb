@@ -8,10 +8,17 @@ class Conversation < ApplicationRecord
   validates :author, uniqueness: {scope: :receiver}
   has_many :personal_messages, -> { order(created_at: :asc) }, dependent: :destroy
 
+  # Make sure you have both id's
   scope :participating, -> (user) do
     where("(conversations.author_id = ? OR conversation.receiver_id = ?)", user.id, user.id)
   end
 
+  #
+  scope :between, -> (sender_id, receiver_id) do
+    where(author_id: sender_id, receiver_id: receiver_id).or(where(author_id: receiver_id, receiver_id: sender_id)).limit(1)
+  end
+
+  # 
   def with(current_user)
     author == current_user ? receiver : author
   end

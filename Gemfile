@@ -5,6 +5,7 @@ ruby '2.7.0'
 
 gem 'chartkick'
 gem 'devise'
+gem 'emoji'
 gem 'rails', '~> 6.1.4'
 gem 'sqlite3', '~> 1.4'
 gem 'mechanize'
