@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- #conversation-body {
+#conversation-body {
    max-height: 400px;
    overflow-y: auto;
    margin-bottom: 2em;

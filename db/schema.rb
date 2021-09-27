@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_26_182820) do
+ActiveRecord::Schema.define(version: 2021_09_27_083942) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "author_id"
-    t.integer "reciever_id"
+    t.integer "receiver_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"author_id\", \"receiver_id\"", name: "index_conversations_on_author_id_and_receiver_id", unique: true
+    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
     t.index ["author_id"], name: "index_conversations_on_author_id"
-    t.index ["reciever_id"], name: "index_conversations_on_reciever_id"
+    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
   end
 
   create_table "personal_messages", force: :cascade do |t|
