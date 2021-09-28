@@ -11,7 +11,7 @@ class Conversation < ApplicationRecord
 
   # Make sure you have both id's
   scope :participating, -> (user) do
-    where("(conversations.author_id = ? OR conversation.receiver_id = ?)", user.id, user.id)
+    where("(conversations.author_id = ? OR conversations.receiver_id = ?)", user.id, user.id)
   end
 
   #

@@ -9,8 +9,10 @@ class PersonalMessagesController < ApplicationController
 
 
   def create
+    @conversation ||= Conversation.create(author_id: current_user.id,
+                                          receiver_id: @receiver.id)
     @personal_message = current_user.personal_messages.build(personal_message_params)
-    @personal_message.conversation_id = conversation_id
+    @personal_message.conversation_id = @conversation.id  # I FOUND IT!!!! was = @conversation_id lol
     @personal_message.save!
 
     flash[:success] = "Your message was sent!"
@@ -30,7 +32,7 @@ class PersonalMessagesController < ApplicationController
       @conversation = Conversation.between(current_user.id, @receiver.id)[0]
     else
       @conversation = Conversation.find_by(id: params[:conversation_id])
-      redirect_to(root_path) and return unless @conversation && @conversation.participates?(current_user)
+      redirect_to(root_path) and return unless @conversation #&& @conversation.participates?(current_user)
     end
   end
 end

@@ -1,10 +1,11 @@
 # Language: Ruby, Level: Level 4
+
 Rails.application.routes.draw do
-  root 'conversations#index'
-  resources :personal_messages, only: [:create]
-  resources :conversations, only: [:index, :show]
+  devise_for :users
+
   resources :users, only: [:index]
   resources :personal_messages, only: [:new, :create]
-  devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :conversations, only: [:index, :show]
+
+  root 'conversations#index'
 end

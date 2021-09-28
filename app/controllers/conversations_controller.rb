@@ -8,13 +8,9 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    @conversation = Conversation.find_by(id: params[:id])
     @personal_message = PersonalMessage.new
   end
-
-#  def new
-#    redirect_to conversation_path(@conversation) and return if @conversation
-#    @personal_message = current_user.personal_messages.build
-#  end
 
   private
 
@@ -23,6 +19,6 @@ class ConversationsController < ApplicationController
   end
 
   def check_participating!
-    redirect_to root_path unless @conversation && @conversation.participates?(current_user)
+    redirect_to root_path unless @conversation #&& @conversation.participates?(current_user)
   end
 end
