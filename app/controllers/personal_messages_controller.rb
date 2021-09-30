@@ -7,7 +7,6 @@ class PersonalMessagesController < ApplicationController
      @personal_message = current_user.personal_messages.build
   end
 
-
   def create
     @conversation ||= Conversation.create(author_id: current_user.id,
                                           receiver_id: @receiver.id)

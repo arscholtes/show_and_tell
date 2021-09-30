@@ -80,7 +80,7 @@ class Spider
 
   private
 
-  #
+  # loop through the array of url's
 
   def enqueued_urls
     Enumerator.new do |y|
@@ -94,7 +94,7 @@ class Spider
     end
   end
 
-  #
+  # log warnings
 
   def log(label, info)
     warn "%-10s: %s" % [label, info]
@@ -114,17 +114,17 @@ class Techpoint
 
   #
 
-  #def initialize(root: "https://techpoint.org/", handler: :process_index, **options)
-  #  @root = root
-  #  @handler = handler
-  #  @options = options
-  #end
-
-  def initialize(root: "https://programmableweb.com/apis/directory", handler: :process_index, **options)
+  def initialize(root: "https://techpoint.org/", handler: :process_index, **options)
     @root = root
     @handler = handler
     @options = options
   end
+
+#  def initialize(root: "https://programmableweb.com/apis/directory", handler: :process_index, **options)
+#    @root = root
+#    @handler = handler
+#    @options = options
+#  end
 
 #
 

@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :personal_messages, only: [:new, :create]
   resources :conversations, only: [:index, :show]
 
+  #get "graph", to: "graph#{}"
   root 'conversations#index'
+
 end

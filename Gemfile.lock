@@ -96,6 +96,8 @@ GEM
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     i18n (1.8.10)
@@ -257,6 +259,7 @@ DEPENDENCIES
   chartkick
   devise
   emoji
+  groupdate
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mechanize
